@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block title %}Convert - Filetool{% endblock %}
+
+{% block content %}
+
+<section class="converter-page">
+
+    <div class="converter-header">
+        <p class="eyebrow">FILE CONVERTER</p>
+
+        <h1>Convert your file.</h1>
+
+        <p>
+            Upload a file, choose the format you need, and let Filetool
+            handle the rest.
+        </p>
+    </div>
+
+
+    <div class="converter-box">
+
+        <form action="/convert" method="POST" enctype="multipart/form-data">
+
+            <!-- Upload -->
+            <div class="upload-box">
+
+                <div class="upload-icon">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                </div>
+
+                <h2>Drop your file here</h2>
+
+                <p>
+                    or click below to choose a file from your computer
+                </p>
+
+                <input
+                    type="file"
+                    name="file"
+                    id="file"
+                    required
+                >
+
+                <label for="file" class="file-button">
+                    Choose File
+                </label>
+
+                <p class="file-name">
+                    No file selected
+                </p>
+
+            </div>
+
+
+            <!-- Conversion -->
+            <div class="conversion-options">
+
+                <div class="format-column">
+
+                    <label>Convert to</label>
+
+                    <select name="format" required>
+
+                        <option value="" disabled selected>
+                            Choose a format
+                        </option>
+
+                        <option value="json">JSON</option>
+                        <option value="csv">CSV</option>
+                        <option value="jpg">JPG</option>
+                        <option value="png">PNG</option>
+                        <option value="webp">WEBP</option>
+                        <option value="pdf">PDF</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- Button -->
+            <button type="submit" class="primary-button convert-button">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                Convert File
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}
