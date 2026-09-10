@@ -36,12 +36,7 @@
                     <p>click below to choose a file from your Device</p>
                 </div>
 
-                <input
-                    type="file"
-                    name="file"
-                    id="file"
-                    required
-                >
+                <input type="file"  name="file" id="file" required >
 
                 <label for="file" class="file-button">
                     Choose File
@@ -50,7 +45,13 @@
                 <p class="file-name">
                     No file selected
                 </p>
+                {% with flash_messages = get_flashed_messages() %}
 
+                    {% for message in flash_messages %}
+                        <p style="color: red;">{{ message }}</p>
+                    {% endfor %}
+
+                {% endwith %}
             </div>
 
 

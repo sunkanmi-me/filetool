@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Download - Filetool
+{% endblock %}
+
+{% block content %}
+
+    <section class="download-page">
+
+
+        <div class="download-box">
+
+            <div class="download-icon"><i class="fa-solid fa-check"></i></div>
+
+            <h1>Conversion Complete!</h1>
+
+            <p>Your file has been successfully converted and is ready to download.</p>
+
+            <p class="converted-file">{{ filename }}</p>
+
+            <div class="download-actions">
+
+                <a href="{{ url_for('download', filename=filename) }}" class="download-button"><i class="fa-solid fa-download"></i> Download File</a>
+
+                <a href="{{ url_for('convert') }}" class="convert-again">Convert Another</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+{% endblock %}
+
+
